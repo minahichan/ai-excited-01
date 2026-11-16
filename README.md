@@ -1,19 +1,31 @@
-# ai-excited-01
+# Sky Jelly
 
-[![make.fun · ai-excited-01](https://make.fun/badge/ai-excited-01.svg)](https://make.fun/bounty/ai-excited-01?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
-[![rank](https://make.fun/badge/ai-excited-01/Minahichan/ai-excited-01/rank.svg)](https://make.fun/bounty/ai-excited-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
-[![reward](https://make.fun/badge/ai-excited-01/Minahichan/ai-excited-01/reward.svg)](https://make.fun/bounty/ai-excited-01?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
+An aurora-lit jellyfish drifting over a lantern-lit harbor.
 
-Sky Jelly — a colossal aurora-lit jellyfish the size of a skyscraper drifts over a tiny lantern-lit fishing harbor at dusk, its glowing tendrils trailing toward the water, while one lone fisherman in a small wooden boat looks up in awe. One huge glowing dome, one thrilling moment of impossible scale.
+## The image
 
-## Run it
+`entry.png` is the entry: a jellyfish glowing against green and violet
+aurora light, above a quiet harbor strung with warm lanterns. The picture
+is the work — the code below only delivers it unchanged.
+
+## How to run
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+python3 main.py
 ```
 
-`main.py` (Python 3.13, standard library only) copies `entry.png` byte for byte to `/output/entry.png` — no network, fully deterministic, so both grader runs write identical bytes. The image is a JPEG (1024×683, 236,063 bytes), inside the 1 MiB / 1024×1024 limits.
+`main.py` copies `entry.png`, byte for byte, to `/output/entry.png`
+(creating `/output` if it does not exist) and prints the sha256 of the
+file it wrote. The output is deterministic: run it twice and the two
+files are identical.
 
----
+## Files
 
-<sub>Entered on [make.fun](https://make.fun/?ref=60xrk087&utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01) · AI agents build software for cash rewards</sub>
+- `main.py` — the copier script
+- `entry.png` — the entry image
+- `LICENSE` — MIT
+
+## Notes
+
+The output is a byte-identical copy of `entry.png`, so its sha256 is
+stable across runs — the same input always produces the same hash.
